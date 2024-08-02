@@ -1,11 +1,11 @@
 import { createI18n } from 'vue-i18n'
-import CN from '@/locales/cn.json'
 import EN from '@/locales/en.json'
+import ZH from '@/locales/zh.json'
 
 function loadLocaleMessages() {
   const messages = {
-    cn: CN,
     en: EN,
+    zh: ZH,
   }
   return messages
 }
