@@ -6,12 +6,41 @@
 
 // Composables
 import { createRouter, createWebHistory } from 'vue-router/auto'
-import { setupLayouts } from 'virtual:generated-layouts'
-import { routes } from 'vue-router/auto-routes'
+import { useAppStore } from '@/stores/app'
+
+const routes = [
+  {
+    path: '/gateways',
+    name: 'Gateways',
+    component: () => import('@/pages/gateway/GatewayList.vue'),
+  },
+  {
+    path: '/',
+    name: 'SignIn',
+    component: () => import('@/pages/SignIn.vue'),
+  }
+]
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: setupLayouts(routes),
+  routes,
+})
+
+router.beforeEach((to, from, next) => {
+  const store = useAppStore()
+  if (to.name !== 'SignIn') {
+    if (!store.isSignedIn) {
+      next({ name: 'SignIn' })
+    } else {
+      next()
+    }
+  } else {
+    if (store.isSignedIn) {
+      next({ name: 'Gateways' })
+    } else {
+      next()
+    }
+  }
 })
 
 // Workaround for https://github.com/vitejs/vite/issues/11804
