@@ -1,10 +1,10 @@
 // Utilities
 import { defineStore } from 'pinia'
 
-import Menu from '@/assets/core/menu.json';
-import Link from '@/assets/core/link.json';
-import Account from '@/assets/core/account.json';
-import UserMenu from '@/assets/user/menu.json';
+import Menu from '@/assets/core/menu.json'
+import Link from '@/assets/core/link.json'
+import Account from '@/assets/core/account.json'
+import UserMenu from '@/assets/user/menu.json'
 
 export const useAppStore = defineStore('app', {
   state: () => ({

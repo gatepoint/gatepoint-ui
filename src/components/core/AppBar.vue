@@ -81,12 +81,12 @@ function changeTheme() {
 
 function changeLanguage() {
   if (store.language === 'en') {
-    store.setLanguage('zh');
+    store.setLanguage('zh')
   }
   else {
-    store.setLanguage('en');
+    store.setLanguage('en')
   }
-  location.reload();
+  location.reload()
 }
 
 

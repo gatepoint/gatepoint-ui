@@ -31,7 +31,7 @@ if (localStorage.tokenAccessToken && localStorage.tokenRefreshToken) {
   })
 }
 
-let currentTheme = localStorage.theme;
+let currentTheme = localStorage.theme
 
 if (!currentTheme) {
   currentTheme = 'light'

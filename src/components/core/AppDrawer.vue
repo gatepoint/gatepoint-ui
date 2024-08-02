@@ -42,10 +42,10 @@ const store = useAppStore()
 
 const rail = computed({
   get() {
-    return store.rail;
+    return store.rail
   },
   set(val) {
-    store.setRail(val);
+    store.setRail(val)
   }
 })
 </script>
